@@ -14,4 +14,7 @@ two options:
 There are two more options, `blue` and `pink` but they don't look so good, I'd refrain from 
 using them. 
 
+PS: I know you're not supposed to upload `.pdf` files but I'm lazy, sometimes I just want 
+to check something on my CV and I really don't want to download and compile it again. 
+
 :blue_heart::blue_heart::blue_heart:
