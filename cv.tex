@@ -1,0 +1,199 @@
+\documentclass[hidelinks]{article}
+
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage[misc]{ifsym}
+\usepackage{tikz}
+\usepackage[left=0.5cm,top=3.1cm,right=1cm,bottom=1cm]{geometry}
+\usepackage{fontspec}
+\usepackage{calc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{sectsty}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{hyperref}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\definecolor{mediumgray}{HTML}{606060}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{green}{HTML}{a4b365}
+\definecolor{purple}{HTML}{a568d3}
+\definecolor{blue}{HTML}{2eb8b8}
+\definecolor{date}{HTML}{A4A4A4}
+\definecolor{pink}{HTML}{F778A1}
+\definecolor{orange}{HTML}{e7b382}
+
+\colorlet{fillheader}{gray}
+\colorlet{headertext}{white}
+
+\def\printWhiteHeader{0}
+\def\printGrayHeader{0}
+\def\pink{0}
+\def\blue{0}
+
+\if\blue1
+    \colorlet{orange}{blue}
+    \colorlet{green}{blue}
+    \colorlet{purple}{blue}
+    \colorlet{pink}{blue}
+\fi
+\if\printWhiteHeader1
+    \colorlet{lightgray}{mediumgray}
+    \colorlet{orange}{mediumgray}
+    \colorlet{green}{mediumgray}
+    \colorlet{purple}{mediumgray}
+    \colorlet{blue}{mediumgray}
+    \colorlet{pink}{mediumgray}
+    \colorlet{fillheader}{white}
+    \colorlet{headertext}{gray}
+\fi
+\if\printGrayHeader1
+    \colorlet{lightgray}{mediumgray}
+    \colorlet{orange}{mediumgray}
+    \colorlet{green}{mediumgray}
+    \colorlet{purple}{mediumgray}
+    \colorlet{blue}{mediumgray}
+    \colorlet{pink}{mediumgray}
+    \colorlet{fillheader}{gray}
+    \colorlet{headertext}{white}
+\fi
+
+\newfontfamily\bodyfont{Roboto-Regular}[Path=fonts/]
+\newfontfamily\bodyfontit{Roboto-LightItalic}[Path=fonts/]
+\newfontfamily\thinfont{Roboto-Thin}[Path=fonts/]
+\newfontfamily\headingfont{RobotoCondensed-Bold}[Path=fonts/]
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Mapping=tex-text, Path = fonts/]{Roboto-Light}
+
+\sectionfont{\large \headingfont}
+
+\color{gray}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=3cm] (box) at (current page.north){};
+  \node [anchor=center] (name) at (box) {
+    \fontsize{40pt}{65pt}\color{headertext}{\thinfont Helena Cruz}};
+\end{tikzpicture}
+
+\begin{minipage}[t]{4.6cm}
+    \vspace*{0pt}
+    \section*{\textcolor{blue}{About me}}
+
+        \includegraphics[scale=0.32]{hel}
+
+        \vspace{0.3cm}
+
+        \begin{tabularx}{4.6cm}{@{}p{0.1cm}l}
+            \textcolor{gray}{\Letter} & \href{mailto:hsrcruz@gmail.com}{{hsrcruz@gmail.com} } \\
+            \textcolor{gray}{\faPhone} & +351 964 369 693 \\
+            \textcolor{gray}{\faGithub} & \href{https://github.com/helenacruz}{helenacruz} \\
+            \textcolor{gray}{\faLinkedin} & \href{https://linkedin.com/helcruz}{helcruz} \\
+        \end{tabularx}
+%
+    \section*{\textcolor{orange}{Programming Languages}}
+        C, C++, Java, Python
+%
+    \section*{\textcolor{pink}{Tools and Technologies}}
+        Vim, Git, IntelliJ, Visual Studio, Xilinx SDK, Arduino, Linux
+%
+    \section*{\textcolor{green}{Languages}}
+        
+        \ifnum\ifnum\printGrayHeader=1 1\else\ifnum\printWhiteHeader=1 1\else0\fi\fi
+        = 1
+            {\small native} \\
+        \else
+            \textcolor{lightgray}{native} \\
+        \fi
+        \null \quad Portuguese
+
+        \ifnum\ifnum\printGrayHeader=1 1\else\ifnum\printWhiteHeader=1 1\else0\fi\fi
+        = 1
+            {\small fluent} \\
+        \else
+            \textcolor{lightgray}{fluent} \\
+        \fi
+        \null \quad English
+
+        \ifnum\ifnum\printGrayHeader=1 1\else\ifnum\printWhiteHeader=1 1\else0\fi\fi
+        = 1
+            {\small beginner} \\
+        \else
+            \textcolor{lightgray}{beginner} \\
+        \fi
+        \null \quad Spanish
+\end{minipage}\hfill
+%
+\hspace{0.6cm}
+%
+\begin{minipage}[t]{\textwidth - 6.1cm}
+    \vspace*{0pt}
+    \section*{\textcolor{pink}{Education}}
+        \begin{tabularx}{\linewidth}{@{}lXc}
+            2016--2018 & {\headingfont MSc. Information Systems and Computer Engineering} & \begin{tabular}[c]{@{}c@{}}\small \textcolor{lightgray}{Instituto Superior Técnico}\\ \small \textcolor{lightgray}{University of Lisbon}\end{tabular} \\
+                      & \multicolumn{2}{p{11.75cm}}{\textcolor{lightgray}{\footnotesize Coursework:} \footnotesize Applications for Embedded Systems; Networked Embedded Systems; Ambient Intelligence;
+                      Software Security;  Parallel and Distributed Computation; Robotics; Programming Languages.} \\[0.6cm]
+
+            2013--2016 & {\headingfont BSc. Information Systems and Computer Engineering} & \begin{tabular}[c]{@{}c@{}}\small \textcolor{lightgray}{Instituto Superior Técnico}\\ \small \textcolor{lightgray}{University of Lisbon}\end{tabular} \\
+                & \multicolumn{2}{p{11.75cm}}{\textcolor{lightgray}{\footnotesize Coursework:} \footnotesize Operating Systems; Software Engineering; Databases; Algorithms; Compilers; 
+                Data Structures; Computer Architecture; Distributed Systems; Artificial Intelligence; Object-Oriented Programming.} \\[0.6cm]
+
+            2010--2013 & {\headingfont High School Science and Technologies} & \begin{tabular}[c]{@{}c@{}}\small \textcolor{lightgray}{Escola Secundária}\\ \small \textcolor{lightgray}{de S. Lourenço}\end{tabular} \\
+
+            \end{tabularx}
+
+    \section*{\textcolor{purple}{Master Thesis}}
+
+    \small During my master's, I've developed an on-board multi-core and fault-tolerant embedded architecture for Synthetic-Aperture Radar (SAR)
+    image generation systems. The architecture was developed considering the space environment, which 
+    can cause bit-flips due to the radiation.
+
+    \smallskip
+
+    \small The developed architecture implemented two fault tolerance mechanisms: lockstep
+    and reduced-precision redundancy and aims to protect the Backprojection algorithm from transient faults, using a
+    software-only approach, generating acceptable SAR images in a space environment. 
+    The solution was implemented using a SoC, a Zybo board from Digilent, with a Zynq device, 
+    containing a dual-core ARM Cortex-A9 processor and a Xilinx FPGA.    
+    The architecture was developed in C and the Xilinx SDK was used. 
+
+    \section*{\textcolor{blue}{Selected Projects}}
+
+    \begin{tabularx}{\linewidth}{@{}Xr}
+        {\headingfont Compiler} & \textcolor{lightgray}{\small \href{https://github.com/helenacruz/zu-compiler}{github.com/helenacruz/zu-compiler}} \\
+        \multicolumn{2}{@{}p{\linewidth}}{\small Implementation of a compiler for a simple language called Zu in C++, using Yacc and Lex.} \\%[0.3cm]
+        \addlinespace[0.3cm]
+        {\headingfont MBED nodes with CAN} & \textcolor{lightgray}{\small \href{https://github.com/helenacruz/Interconnecting-mbed-nodes-CAN}{github.com/helenacruz/Interconnecting-mbed-nodes-CAN}} \\
+        \multicolumn{2}{@{}p{\linewidth}}{\small
+            Implementation of a CAN (Controller Area Network) using MBED nodes, the FreeRTOS operating system and several additional sensors such as flame, ultrassonic and temperature sensor.
+        } \\%[0.6cm]
+        \addlinespace[0.3cm]
+        {\headingfont Parallel 3D Game of Life} & \textcolor{lightgray}{\small \href{https://github.com/helenacruz/game-of-life3d}{github.com/helenacruz/game-of-life3d}} \\
+        \multicolumn{2}{@{}p{\linewidth}}{\small Implementation of a parallel 3D Game of Life in C++ using OpenMP and MPI.} 
+    \end{tabularx}
+
+    \section*{\textcolor{orange}{Interests}}
+
+        \small My main interests include embedded systems, critical systems, fault tolerance and
+        low-level programming. I also like to play around with boards and sensors.
+
+        \smallskip
+
+        \small When I'm not at a computer, I'm probably reading a book, watching a TV show or 
+        annoying my cat.
+
+\end{minipage}\hfill
+
+\end{document}
